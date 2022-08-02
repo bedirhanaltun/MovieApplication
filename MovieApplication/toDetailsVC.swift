@@ -51,9 +51,8 @@ class toDetailsVC: UIViewController {
             imageView.kf.setImage(with: URL(string: selectedImage))
             
         }
-        if imageView.image != nil {
-            removeSpinner()
-        }
+        
+        removeSpinner()
         
         
         titleLabel.textColor = .white
