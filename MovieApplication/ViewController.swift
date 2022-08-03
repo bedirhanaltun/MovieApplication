@@ -183,15 +183,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //Error Function
     
     func showError(message : String?){
-        DispatchQueue.main.async {
-            let error = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
-            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            error.addAction(okButton)
-            self.present(error, animated: true, completion: nil)
-            
-            //Hide Activity Indicator
-            self.removeLoadingScreen()
-        }
+        let error = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        error.addAction(okButton)
+        self.present(error, animated: true, completion: nil)
+        
+        //Hide Activity Indicator
+        self.removeLoadingScreen()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
